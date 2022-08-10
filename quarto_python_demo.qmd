@@ -1,0 +1,72 @@
+---
+title: "Quarto Python testing"
+author: "Leslie Emery"
+format:
+  html:
+    theme: sketchy
+jupyter: python3
+---
+
+## Hello, world
+
+I'm trying out Quarto with Python here!
+
+```{python}
+for i in range(10):
+  print("Line {}".format(i))
+```
+
+## Look at example data (iris)
+
+```{python}
+#| label: setup
+import numpy as np
+import pandas as pd
+```
+
+```{python}
+iris = pd.read_csv("data/iris.csv")
+```
+
+Ugh, it looks like, because it's using the Jupyter engine, this is still subject to the stupid thing where Jupyter code cells only display their last output 
+
+```{python}
+iris.head()
+iris.tail()
+```
+
+```{python}
+iris.head()
+```
+
+This snippet of code from [this blog](https://blog.ednalyn.com/2019/06/24/how-to-print-all-the-output-of-a-cell-in-jupyter-notebook/) changes it so that all output is printed. But it's still not interleaved like I'm used from KnitR output. Maybe I'll just have to get used to this...
+
+```{python}
+#| eval: false
+from IPython.core.interactiveshell import InteractiveShell 
+
+old_default = InteractiveShell.ast_node_interactivity.default_value
+InteractiveShell.ast_node_interactivity = "all"
+```
+
+
+```{python}
+iris.head()
+iris.tail()
+iris.columns
+iris.info()
+iris.describe()
+```
+
+```{python}
+#| eval: false
+# Change it back
+InteractiveShell.ast_node_interactivity = old_default
+```
+
+```{python}
+iris.columns
+iris.columns
+```
+
+

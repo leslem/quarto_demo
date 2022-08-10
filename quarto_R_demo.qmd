@@ -1,0 +1,23 @@
+---
+title: "2022 welcome to Quarto workshop"
+author: "Leslie Emery"
+date: "`r format(Sys.time(), '%Y-%m-%d %I:%M %Z')`"
+format: 
+  html:
+    theme: bms-theme.scss
+---
+
+Trying out Quarto finally!
+
+```{r}
+#| label: setup
+library(palmerpenguins)
+library(dplyr)
+library(DT)
+```
+
+```{r}
+#| label: penguins_dt
+data(penguins)
+datatable(penguins)
+```

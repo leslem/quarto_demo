@@ -19,12 +19,12 @@ options(repos=my_repos)
 options()$repos
 
 # Install a package from BMS RSPM BRAN internal packages
-renv::install("bmspal")
+# renv::install("bmspal")
 
 # Install packages from CRAN
 pkg_list <- c(
   "tidyverse", "gt", "gtExtras", "reactable", "ggiraph", "here", "quarto",
-  "rmarkdown", "gtsummary", "palmerpenguins", "fs", "skimr"
+  "rmarkdown", "gtsummary", "palmerpenguins", "fs", "skimr", "DT", "markdown"
 )
 install.packages(pkg_list)
 
