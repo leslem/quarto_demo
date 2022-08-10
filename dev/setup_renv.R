@@ -11,15 +11,14 @@ source("~/devel/set_proxy.R")
 # Set repository options
 # Include all repositories you want to be available in your renv.lock file
 my_repos <- c(
-    'CRAN'="https://cran.rstudio.com/"
-    # ,
-    # 'BMS BRAN'="http://pm.rdcloud.bms.com:4242/bms-cg-biogit-bran/latest"
+    'CRAN'="https://cran.rstudio.com/",
+    'BMS BRAN'="http://pm.rdcloud.bms.com:4242/bms-cg-biogit-bran/latest"
 )
 options(repos=my_repos)
 options()$repos
 
 # Install a package from BMS RSPM BRAN internal packages
-# renv::install("bmspal")
+renv::install(c("bmspal", "bmsdash"))
 
 # Install packages from CRAN
 pkg_list <- c(

@@ -5,6 +5,8 @@ date: "`r format(Sys.time(), '%Y-%m-%d %I:%M %Z')`"
 format: 
   html:
     theme: bms-theme.scss
+    toc: true
+    # mainfont: "BMS Humanity"
 ---
 
 Trying out Quarto finally!
@@ -16,8 +18,57 @@ library(dplyr)
 library(DT)
 ```
 
+::: callout-note
+## Note callout
+
+This is a note
+:::
+
+::: callout-tip
+## Tip callout
+
+This is a tip
+:::
+
+::: callout-caution
+## Caution callout
+
+Caution!
+:::
+
+::: callout-warning
+## Warning!
+
+This is a warning
+:::
+
+::: callout-important
+## Important!
+
+This is an important callout
+:::
+
 ```{r}
 #| label: penguins_dt
 data(penguins)
 datatable(penguins)
 ```
+
+| Col1 | Col2 | Col3 | Col4   |
+|------|------|------|--------|
+| a    | amo  | sum  | summus |
+| b    | amas | es   | estis  |
+| c    | amat | est  | sunt   |
+
+: Example table
+
+## Wow! Flow charts!!!
+
+```{mermaid}
+flowchart LR
+  A[Hard edge] --> B(Round edge)
+  B --> C{Decision}
+  C --> D[Result one]
+  C --> E[Result two]
+```
+

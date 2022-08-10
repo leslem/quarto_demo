@@ -3,7 +3,9 @@ title: "Quarto Python testing"
 author: "Leslie Emery"
 format:
   html:
-    theme: sketchy
+    theme: bms-theme.scss
+    highlight-style: pygment
+    toc: true
 jupyter: python3
 ---
 
